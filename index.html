@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile Plus Consulting | Profile</title>
+    
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spc: {
+                            primary: '#020562', // 深い紺
+                            accent: '#22AEC9',  // 爽やかシアン
+                            base: '#FEFEFE',    // 白
+                            text: '#0F172A',    // 濃い文字色
+                            gray: '#64748B',    // サブ文字色
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(2, 5, 98, 0.08)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f3f4f6; /* 外側はグレーで中央を目立たせる */
+            color: #0F172A;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 中央寄せコンテナ（スマホ画面シミュレーション） */
+        .mobile-container {
+            max-width: 420px;
+            margin: 0 auto;
+            background-color: #FEFEFE;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.05);
+            overflow-x: hidden;
+        }
+
+        /* スクロールダウンアニメーション */
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* フェードインアニメーション */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ホバー時のボタン挙動 */
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(34, 174, 201, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- 0. Header -->
+        <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-5 py-4 flex justify-between items-center transition-all duration-300">
+            <!-- ロゴ画像 -->
+            <div class="h-8 flex items-center">
+                <img src="rogo.jpg" alt="SPC Logo" class="h-full w-auto object-contain">
+            </div>
+            <a href="https://www.smileplusctg.com/contact" target="_blank" class="bg-spc-primary text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors">
+                相談する
+            </a>
+        </header>
+
+        <!-- 1. Hero Section -->
+        <section class="px-6 pt-10 pb-16 text-center relative overflow-hidden">
+            <!-- 背景装飾（控えめなグラデーション） -->
+            <div class="absolute top-0 left-0 w-full h-2/3 bg-gradient-to-b from-blue-50/50 to-transparent -z-10"></div>
+
+            <!-- 写真枠 -->
+            <div class="mx-auto w-32 h-32 mb-8 relative">
+                <div class="w-full h-full rounded-full bg-gray-200 overflow-hidden border-4 border-white shadow-soft">
+                    <!-- プロフィール写真 -->
+                    <img src="yoshibon.jpg" alt="プロフィール写真" class="w-full h-full object-cover">
+                </div>
+                <!-- ワンポイントアイコン -->
+                <div class="absolute bottom-0 right-0 bg-spc-accent text-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+            </div>
+
+            <!-- 名前 -->
+            <p class="text-spc-gray text-sm font-medium mb-2">スマイルプラスコンサルティング代表</p>
+            <h1 class="text-xl font-bold text-spc-primary mb-6">Yoshiya Matsumoto</h1>
+
+            <!-- キャッチコピー -->
+            <h2 class="text-2xl font-bold text-spc-primary leading-snug mb-4 fade-in-up">
+                70歳。<br>
+                AIを、5000時間<br>
+                使ってきました。
+            </h2>
+            <p class="text-spc-text text-sm leading-relaxed mb-8 fade-in-up" style="transition-delay: 0.1s;">
+                流行りとしてではなく、<br>
+                現場で使える形にするために。
+            </p>
+
+            <!-- 実績バッジ -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 fade-in-up" style="transition-delay: 0.2s;">
+                <span class="bg-spc-primary/5 text-spc-primary text-xs px-3 py-1 rounded-full font-medium border border-spc-primary/10">AI活用 5000時間</span>
+                <span class="bg-spc-primary/5 text-spc-primary text-xs px-3 py-1 rounded-full font-medium border border-spc-primary/10">現場 × 改善</span>
+                <span class="bg-spc-primary/5 text-spc-primary text-xs px-3 py-1 rounded-full font-medium border border-spc-primary/10">アプリ開発</span>
+            </div>
+
+            <!-- ファーストビューCTA -->
+            <div class="mb-12 fade-in-up" style="transition-delay: 0.3s;">
+                <p class="text-xs text-spc-gray mb-3">中小企業・士業・個人事業主の<br>「考える時間」を、ひとりにしない。</p>
+            </div>
+
+            <!-- スクロール誘導 -->
+            <div class="text-spc-accent scroll-down cursor-pointer" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">
+                <p class="text-xs mb-1">続きを見る</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- 2. Story: Not an Expert -->
+        <section id="story" class="px-5 py-12 bg-white relative">
+            <div class="max-w-sm mx-auto fade-in-up">
+                <div class="border-l-4 border-spc-accent pl-4 mb-6">
+                    <h3 class="text-lg font-bold text-spc-primary leading-relaxed">
+                        私は「AIが得意な人」<br>ではありません
+                    </h3>
+                </div>
+                <div class="prose prose-sm text-spc-text leading-loose">
+                    <p class="mb-4">
+                        私はエンジニアでもIT企業出身でもありません。人生のほとんどを、現場で、人と向き合う仕事に使ってきました。
+                    </p>
+                    <p>
+                        だからこそ、AIをただの技術ではなく<span class="bg-yellow-100 px-1 font-bold text-spc-primary">“現場で使える道具”</span>に落とし込めます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 70歳 x AI -->
+        <section class="px-5 py-12 bg-gray-50/50">
+            <div class="bg-white rounded-2xl p-6 shadow-card fade-in-up">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-spc-primary text-white flex items-center justify-center">
+                        <span class="font-bold text-lg">70</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-spc-primary">70歳で、AI？</h3>
+                </div>
+                <p class="text-sm text-spc-text leading-loose">
+                    若さの代替ではなく、<br>
+                    経験を形にするための相棒として。
+                </p>
+                <div class="my-4 h-px bg-gray-100 w-full"></div>
+                <p class="text-sm text-spc-text leading-loose">
+                    人生経験・社会経験・現場経験を、<br>
+                    アプリ・文章・仕組みに変えるために<br>
+                    <span class="text-spc-accent font-bold">AIを5000時間以上</span>使ってきました。
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. App Philosophy -->
+        <section class="px-5 py-12 text-center">
+            <div class="inline-block p-3 rounded-full bg-spc-accent/10 text-spc-accent mb-4 fade-in-up">
+                <i class="fa-solid fa-mobile-screen text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-spc-primary mb-6 fade-in-up">
+                私が作っているのは<br>「アプリ」ですが…
+            </h3>
+            <p class="text-sm text-spc-text leading-loose fade-in-up">
+                本当に提供したいのは、<br>
+                <span class="font-bold text-spc-primary text-base">「めんどうを、考えなくていい形にする」</span><br>
+                そんな体験です。
+            </p>
+        </section>
+
+        <!-- 5. SPC Value Proposition -->
+        <section class="px-5 py-12 bg-spc-primary text-white relative overflow-hidden">
+            <!-- 背景装飾 -->
+            <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+
+            <div class="relative z-10 fade-in-up">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="w-1 h-6 bg-spc-accent block"></span>
+                    <h3 class="text-lg font-bold">SPCとしての提供価値</h3>
+                </div>
+                
+                <p class="text-sm leading-loose opacity-90 mb-8">
+                    スマイルプラスコンサルティングは、企業さまの“眠っている強み”を一緒に見つけ、未来への成長をサポートします。🌱✨
+                </p>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center border border-white/10">
+                        <i class="fa-solid fa-laptop-code mb-2 text-spc-accent"></i>
+                        <p class="text-xs">Web制作</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center border border-white/10">
+                        <i class="fa-solid fa-hashtag mb-2 text-spc-accent"></i>
+                        <p class="text-xs">SNS運用</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center border border-white/10">
+                        <i class="fa-solid fa-video mb-2 text-spc-accent"></i>
+                        <p class="text-xs">動画・広告</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center border border-white/10">
+                        <i class="fa-solid fa-music mb-2 text-spc-accent"></i>
+                        <p class="text-xs">音楽制作</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Compatibility Check -->
+        <section class="px-5 py-12 bg-gray-50">
+            <h3 class="text-center text-lg font-bold text-spc-primary mb-8 fade-in-up">
+                こんな想いはありませんか？
+            </h3>
+            
+            <div class="space-y-4 fade-in-up">
+                <!-- Check Item 1 -->
+                <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                    <div class="mt-1 text-spc-accent">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <p class="text-sm text-spc-text">AIに興味はあるけど何から始めればいいかわからない</p>
+                </div>
+                <!-- Check Item 2 -->
+                <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                    <div class="mt-1 text-spc-accent">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <p class="text-sm text-spc-text">専門家に丸投げではなく一緒に考えたい</p>
+                </div>
+                <!-- Check Item 3 -->
+                <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                    <div class="mt-1 text-spc-accent">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <p class="text-sm text-spc-text">派手さより地に足のついた改善をしたい</p>
+                </div>
+                <!-- Check Item 4 -->
+                <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                    <div class="mt-1 text-spc-accent">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <p class="text-sm text-spc-text">年齢や立場に関係なく話を聞いてほしい</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Closing -->
+        <section class="px-6 py-12 text-center bg-white">
+            <div class="w-16 h-1 bg-gradient-to-r from-spc-primary to-spc-accent mx-auto mb-8 rounded-full"></div>
+            <h3 class="text-xl font-bold text-spc-primary mb-4 fade-in-up">
+                履歴書の代わりに<br>このページを。
+            </h3>
+            <p class="text-sm text-spc-text leading-loose fade-in-up">
+                いきなり仕事の話でなくて大丈夫です。<br>
+                「ちょっと聞いてみたい」それだけで十分です。<br>
+                <br>
+                あなたの一歩を、<br>
+                一緒に整えるところから始めませんか🌱
+            </p>
+        </section>
+
+        <!-- 8. Final CTA -->
+        <section id="contact" class="px-5 pb-16 pt-8 bg-gray-50">
+            <div class="bg-white rounded-2xl p-8 shadow-soft text-center fade-in-up border-t-4 border-spc-accent">
+                <p class="text-sm font-bold text-spc-gray mb-4">まずは雑談からでも🙂</p>
+                <h2 class="text-xl font-bold text-spc-primary mb-6">困りごとの棚卸し<br>だけでもOKです</h2>
+                
+                <a href="https://www.smileplusctg.com/contact" target="_blank" class="block w-full bg-spc-accent text-white font-bold py-4 rounded-xl shadow-lg btn-hover flex justify-center items-center gap-2 mb-4">
+                    <i class="fa-regular fa-envelope"></i>
+                    お問い合わせはこちら
+                </a>
+                
+                <p class="text-xs text-gray-400 mt-4">
+                    ※外部フォームへ移動します
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-spc-primary text-white py-6 text-center text-xs opacity-90">
+            <p>&copy; Smile Plus Consulting.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Once visible, stop observing
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.fade-in-up');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
